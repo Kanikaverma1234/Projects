@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            color: antiquewhite;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(250, 107, 131);
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 100px;
+        }
+
+        .btn {
+            margin-top: 12px;
+            margin-bottom: 12px;
+            padding: 1%;
+            border-radius: 30px;
+            border: 2px solid rgb(231, 134, 150);
+            font-size: 1.2rem;
+            background-color: rgb(241, 201, 207);
+        }
+
+        .text {
+            font-size: 56px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Random Jokes</h1>
+        <button type="button" onclick="getJoke()" class="btn">Get Joke</button>
+        <p id="joke" class="text"></p>
+    </div>
+
+    <script>
+        const jokes = [
+            {
+                question: " Why don't programmers like the nature?",
+                answer: " Beacause of too many bugs"
+            },
+            {
+                question: "Why do JavaScript developers wear glasses?",
+                answer: "Beacause they are unable to see c#"
+            },
+            {
+                question: " Why was the computer cold?",
+                answer: "Beacause computer forgets to close the window"
+            },
+            {
+                question: "What did the fish say when he swam into a wall?",
+                answer: "Dam"
+            },
+            {
+                question: "Did you hear about the guy who invented the knock-knock jokes?",
+                answer: "He won 'no-bell' prize"
+            },
+            {
+                question: "Why did the programmer bring a ladder to work?",
+                answer: "Because he wanted to go to the next level"
+            },
+            {
+                question: "Why was the computer tired?",
+                answer: "Because it had too many tabs open."
+            },
+            {
+                question: "Why was the JavaScript developer sad?",
+                answer: "Because she didn't Node to express herself. "
+            },
+            {
+                question: "Why the computer go to the doctor",
+                answer: "Because it caught a virus."
+            }
+        ];
+
+        function getJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+
+            const joke = jokes[randomIndex];
+
+            document.getElementById("joke").innerText = "Question: " + joke.question + "\nAnswer: " + joke.answer
+        }
+
+
+    </script>
+</body>
+
+</html>
